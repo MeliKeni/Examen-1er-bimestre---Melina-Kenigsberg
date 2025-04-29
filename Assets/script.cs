@@ -56,10 +56,10 @@ public class script : MonoBehaviour
 
         if(promedioKilometraje < 10000)
         {
-            Debug.Log("VTV aprobada por 2 años");
+            Debug.Log("VTV otorgada por 2 años");
         }else
         {
-            Debug.Log("VTV aprobada por 1 año");
+            Debug.Log("VTV otorgada por 1 año");
         }
 
 
