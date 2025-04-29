@@ -10,37 +10,57 @@ public class script : MonoBehaviour
     public int kilometrosRecorridos;
     public int vencimientoVtv;
     public float HCppm;
-
+    bool aprobado = true;
+    int aniosAuto = 0;
+    float promedioKilometraje =0; 
     void Start()
     {
         if (patente == "")
         {
-            Debug.Log("No se ingreso la patente, VTV no aprobada");
-            return;
+            Debug.Log("No se ingreso la patente");
+            aprobado = false;
+            
         }
         if (anioFabricacion < 1900 || anioFabricacion > 2025)
         {
-            Debug.Log("Anio de fabricacion no valido, VTV no aprobada");
-            return;
+            Debug.Log("Anio de fabricacion no valido");
+            aprobado = false;
         }
         if (kilometrosRecorridos < 0)
         {
-            Debug.Log("Los kilometros recorridos no puden ser negativos, VTV no aprobada");
-            return;
+            Debug.Log("Los kilometros recorridos no puden ser negativos");
+            aprobado = false;
         }
-        if (vencimientoVtv < anioFabricacion || vencimientoVtv > 2025)
+        if (vencimientoVtv <= anioFabricacion || vencimientoVtv > 2025)
         {
-            Debug.Log("Fecha de vencimiento de la VTV actual no es valida, VTV no aprobada");
-            return;
+            Debug.Log("Fecha de vencimiento de la VTV actual no es valida");
+            aprobado = false;
         }
         if (HCppm < 5)
         {
-            Debug.Log("HCppm no valido, debe ser mayor o igual a 5, VTV no aprobada");
-            return;
+            Debug.Log("HCppm no valido, debe ser mayor o igual a 5");
+            aprobado = false;
         }
 
+        if(HCppm > 100)
+        {
+            aprobado = false;
+        }
+        if (aprobado == false)
+        {
+            Debug.Log("VTV no aprobada");
+            return;
+        }
+        aniosAuto = 2025 - anioFabricacion;
+        promedioKilometraje = kilometrosRecorridos / aniosAuto;
 
-
+        if(promedioKilometraje < 10000)
+        {
+            Debug.Log("VTV aprobada por 2 años");
+        }else
+        {
+            Debug.Log("VTV aprobada por 1 año");
+        }
 
 
     }
