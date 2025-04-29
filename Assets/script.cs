@@ -31,7 +31,7 @@ public class script : MonoBehaviour
             Debug.Log("Los kilometros recorridos no puden ser negativos");
             aprobado = false;
         }
-        if (vencimientoVtv <= anioFabricacion || vencimientoVtv > 2025)
+        if (vencimientoVtv <= anioFabricacion || vencimientoVtv >= 2025)
         {
             Debug.Log("Fecha de vencimiento de la VTV actual no es valida");
             aprobado = false;

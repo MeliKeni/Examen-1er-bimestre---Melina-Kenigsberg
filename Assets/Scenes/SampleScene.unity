@@ -223,10 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc2a26f74249724b84d507ee11376fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patente: aaa
+  patente: a
   anioFabricacion: 2020
-  kilometrosRecorridos: 2147483647
-  vencimientoVtv: 2021
+  kilometrosRecorridos: 4
+  vencimientoVtv: 2025
   HCppm: 100
 --- !u!4 &1405724104
 Transform:
